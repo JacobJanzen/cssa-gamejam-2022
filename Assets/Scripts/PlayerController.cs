@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private const float MIN_GRAVITY = 0.1f;
+    private const float MAX_GRAVITY = 1.3f;
+    private const float MAX_ALTITUDE = 250.0f;//min alt is assumed to be 0
     private Rigidbody2D characterRigidBody;
     private float moveHorizontal;
     private float moveVertical;
@@ -37,6 +40,9 @@ public class PlayerController : MonoBehaviour
             alreadyJumped = true;
             this.characterRigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
         }
+
+        updateGravity();
+        checkVoidFall();
     }
 
     private void FixedUpdate()
@@ -68,5 +74,16 @@ public class PlayerController : MonoBehaviour
         }
 
         return false;
+    }
+
+    void updateGravity(){
+        this.characterRigidBody.gravityScale = MIN_GRAVITY + MAX_GRAVITY - ((this.transform.position.y/MAX_ALTITUDE)*MAX_GRAVITY);
+        //Debug.Log(this.characterRigidBody.gravityScale);
+    }
+
+    void checkVoidFall(){
+        if(this.transform.position.y < -20){
+            this.characterRigidBody.position = new Vector2(0,0);
+        }
     }
 }
