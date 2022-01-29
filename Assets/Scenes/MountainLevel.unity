@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 335356997}
   - component: {fileID: 335356996}
   m_Layer: 6
-  m_Name: small grass platform (2)
+  m_Name: small platform (2)
   m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,7 +169,7 @@ PlatformEffector2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RotationalOffset: 0
-  m_UseOneWay: 1
+  m_UseOneWay: 0
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 180
   m_UseSideFriction: 0
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 737563424}
   - component: {fileID: 737563423}
   m_Layer: 6
-  m_Name: small grass platform
+  m_Name: small platform
   m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,7 +298,7 @@ PlatformEffector2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RotationalOffset: 0
-  m_UseOneWay: 1
+  m_UseOneWay: 0
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 180
   m_UseSideFriction: 0
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 1022766262}
   - component: {fileID: 1022766261}
   m_Layer: 6
-  m_Name: small grass platform (4)
+  m_Name: small platform (4)
   m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -471,7 +471,7 @@ PlatformEffector2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RotationalOffset: 0
-  m_UseOneWay: 1
+  m_UseOneWay: 0
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 180
   m_UseSideFriction: 0
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 1462900729}
   - component: {fileID: 1462900728}
   m_Layer: 6
-  m_Name: small grass platform (1)
+  m_Name: small platform (1)
   m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -725,7 +725,7 @@ PlatformEffector2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RotationalOffset: 0
-  m_UseOneWay: 1
+  m_UseOneWay: 0
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 180
   m_UseSideFriction: 0
@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 1743753790}
   - component: {fileID: 1743753789}
   m_Layer: 6
-  m_Name: small grass platform (3)
+  m_Name: small platform (3)
   m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -854,7 +854,7 @@ PlatformEffector2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RotationalOffset: 0
-  m_UseOneWay: 1
+  m_UseOneWay: 0
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 180
   m_UseSideFriction: 0
@@ -950,7 +950,7 @@ GameObject:
   - component: {fileID: 1802037912}
   - component: {fileID: 1802037911}
   m_Layer: 6
-  m_Name: small grass platform (6)
+  m_Name: small platform (6)
   m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -983,7 +983,7 @@ PlatformEffector2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RotationalOffset: 0
-  m_UseOneWay: 1
+  m_UseOneWay: 0
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 180
   m_UseSideFriction: 0
@@ -1079,7 +1079,7 @@ GameObject:
   - component: {fileID: 2038930018}
   - component: {fileID: 2038930017}
   m_Layer: 6
-  m_Name: small grass platform (5)
+  m_Name: small platform (5)
   m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1112,7 +1112,7 @@ PlatformEffector2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RotationalOffset: 0
-  m_UseOneWay: 1
+  m_UseOneWay: 0
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 180
   m_UseSideFriction: 0
