@@ -10,10 +10,11 @@ public class PlayerController : MonoBehaviour
     private Vector2 currentVelocity;
     [SerializeField]
     private float movementSpeed = 3f;
-    private bool isJumping = false;
     private bool alreadyJumped = false;
     [SerializeField]
     private float jumpForce = 300f;
+
+    public LayerMask groundLayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,13 +28,15 @@ public class PlayerController : MonoBehaviour
         this.moveVertical = Input.GetAxis("Vertical"); // Y-Axis
         this.currentVelocity = this.characterRigidBody.velocity;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!alreadyJumped && Input.GetKeyDown(KeyCode.Space))
         {
-            if (!isJumping)
-            {
-                isJumping = true;
-                alreadyJumped = false;
-            }
+            this.characterRigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
+            alreadyJumped = true;
+        }
+        else if (IsGrounded())
+        {
+            alreadyJumped = false;
+            transform.eulerAngles = new Vector3(0,0,0);
         }
     }
 
@@ -43,16 +46,20 @@ public class PlayerController : MonoBehaviour
         {
             this.characterRigidBody.velocity = new Vector2(this.moveHorizontal * this.movementSpeed, this.currentVelocity.y);
         }
-
-        if (isJumping && !alreadyJumped)
-        {
-            this.characterRigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
-            this.alreadyJumped = true;
-        }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    bool IsGrounded()
     {
-            this.isJumping = false;
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.down;
+        float distance = .6f;
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
