@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
         }
 
         updateGravity();
+        checkVoidFall();
     }
 
     private void FixedUpdate()
@@ -79,5 +80,11 @@ public class PlayerController : MonoBehaviour
     void updateGravity(){
         this.characterRigidBody.gravityScale = MIN_GRAVITY + MAX_GRAVITY - ((this.transform.position.y/MAX_ALTITUDE)*MAX_GRAVITY);
         //Debug.Log(this.characterRigidBody.gravityScale);
+    }
+
+    void checkVoidFall(){
+        if(this.transform.position.y < -20){
+            this.characterRigidBody.position = new Vector2(0,0);
+        }
     }
 }
