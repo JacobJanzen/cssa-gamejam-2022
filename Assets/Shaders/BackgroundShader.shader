@@ -7,7 +7,7 @@
 		_MaxAltitude("MaxAltitude", float) = 1.0
 	}
 
-		SubShader
+	SubShader
 	{
 		Lighting Off
 		Blend One Zero
@@ -47,6 +47,8 @@
 			float _Altitude, _MaxAltitude;
 			float _PlayerX;
 
+			static const float3 sunOriginalColor = float3(0.9882352941176471, 0.8313725490196079, 0.25098039215686274);
+
 			float4 vert(appdata_base v) : POSITION {
 				return UnityObjectToClipPos(v.vertex);
 			}
@@ -85,7 +87,6 @@
 				sunValue = easeOutSine(sunValue);
 				sunValue *= max(0, 1 - easeOutSine(altitudeRatio) * 1.5);
 				sunValue = min(1, max(0, sunValue));
-				float3 sunOriginalColor = float3(0.9882352941176471, 0.8313725490196079, 0.25098039215686274);
 				float3 sunColor = sunOriginalColor * sunValue;
 
 				// Moon
