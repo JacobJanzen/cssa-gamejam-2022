@@ -35,9 +35,9 @@ public class PlayerController : MonoBehaviour
         }
         else if (IsGrounded())
         {
-            alreadyJumped = false;
-            transform.eulerAngles = new Vector3(0,0,0);
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
+
     }
 
     private void FixedUpdate()
@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
         if (this.moveHorizontal != 0)
         {
             this.characterRigidBody.velocity = new Vector2(this.moveHorizontal * this.movementSpeed, this.currentVelocity.y);
+        }
+
+        if (IsGrounded() && alreadyJumped)
+        {
+            alreadyJumped = false;
         }
     }
 
