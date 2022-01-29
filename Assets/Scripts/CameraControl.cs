@@ -21,6 +21,7 @@ public class CameraControl : MonoBehaviour
             b.Encapsulate(r.bounds);
         }
         sceneHeight = b.max.y;
+        Debug.Log($"Scene height: {sceneHeight}");
     }
 
     // Update is called once per frame
