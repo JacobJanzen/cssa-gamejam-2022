@@ -15,6 +15,6 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = new Vector3(offset.x, player.position.y + offset.y + 1, offset.z); // Camera follows the player with specified offset position
+        transform.position = new Vector3(player.position.x + offset.x, player.position.y + offset.y + 1, offset.z); // Camera follows the player with specified offset position
     }
 }
