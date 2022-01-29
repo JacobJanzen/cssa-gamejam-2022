@@ -371,6 +371,11 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!4 &1169936521 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2119618000387147553, guid: b3fabecb0ce077a4ea4fd27fdccc6a29, type: 3}
+  m_PrefabInstance: {fileID: 1987941903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1535885894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -716,6 +721,6 @@ PrefabInstance:
     - target: {fileID: 5901884645109697716, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1169936521}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
