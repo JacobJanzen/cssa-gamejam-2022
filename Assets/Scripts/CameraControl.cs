@@ -18,7 +18,7 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = new Vector3(player.position.x + offset.x, player.position.y + offset.y, offset.z); // Camera follows the player with specified offset position
+        transform.position = new Vector3(player.position.x + offset.x, player.position.y + offset.y + 1, offset.z); // Camera follows the player with specified offset position
         Skybox skybox = this.GetComponent<Skybox>();
         skybox.material.SetFloat("_Altitude", player.position.y);
         skybox.material.SetFloat("_PlayerX", player.position.x);
