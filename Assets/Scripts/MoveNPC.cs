@@ -6,7 +6,7 @@ public class MoveNPC : MonoBehaviour
 {
     private const int FRAME_LIMIT = 400;//frames
     private const double RADIUS = 1.5;
-    private const int MAX_SPEED = 2.2f;
+    private const float MAX_SPEED = 2.2f;
     private SpriteRenderer sprite;
     private int frames = 0;
     private double startPosition;
@@ -42,7 +42,7 @@ public class MoveNPC : MonoBehaviour
         }
     }   
 
-    int getSpeed(){
+    float getSpeed(){
         return Random.Range(0.1f,MAX_SPEED+1.0f);
     }
 
