@@ -252,6 +252,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!20 &85987834 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5901884645109697714, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
+  m_PrefabInstance: {fileID: 1293049210}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &113001438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,11 +1784,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2119618000387147553, guid: b3fabecb0ce077a4ea4fd27fdccc6a29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.06
+      value: -0.001
       objectReference: {fileID: 0}
     - target: {fileID: 2119618000387147553, guid: b3fabecb0ce077a4ea4fd27fdccc6a29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.01
+      value: -0.006
       objectReference: {fileID: 0}
     - target: {fileID: 2119618000387147553, guid: b3fabecb0ce077a4ea4fd27fdccc6a29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2961,6 +2966,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 5901884645109697714, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
+      propertyPath: m_Depth
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901884645109697714, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
+      propertyPath: orthographic size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5901884645109697715, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3009,6 +3022,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 868879517}
+    - target: {fileID: 5901884645109697716, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
+      propertyPath: m_OrthographicCamera
+      value: 
+      objectReference: {fileID: 85987834}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
 --- !u!1 &1335841963
