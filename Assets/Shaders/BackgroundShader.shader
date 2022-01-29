@@ -34,11 +34,11 @@
 				float cell;
 			};
 
-			inline float4 starBrightness(float starNum);
-			float2 unity_gradientNoise_dir(float2 p);
-			float unity_gradientNoise(float2 p);
+			inline float4 star_brightness(float starNum);
 			float gold_noise(float2 xy, float seed = 5);
 			float random(float2 uv);
+			float2 perlin_noise_dir(float2 p);
+			float perlin_noise(float2 p);
 			inline float2 voronoi_noise_random_vector(float2 UV, float offset);
 			VoronoiOutput voronoi(float2 UV, float AngleOffset, float CellDensity);
 			float easeOutSine(float x);
@@ -75,7 +75,7 @@
 				float starValue = 1 - voronoiData.value;
 				starValue = pow(starValue + 0.5, 10) / pow(1.5, 10);
 				starValue = gold_noise(float2(voronoiData.cell, voronoiData.value)) < 0.0003 ? starValue : 0;
-				starValue *= starBrightness(voronoiData.cell);
+				starValue *= star_brightness(voronoiData.cell);
 				starValue = max(0, starValue);
 				starValue *= altitudeRatio;
 				float3 starColor = starValue;
@@ -97,14 +97,14 @@
 				moonValue *= 1 - max(0, 1 - easeOutSine(altitudeRatio) * 1.5);
 				moonValue = max(0, min(1, max(0, moonValue)));
 				float3 moonOriginalColor = float3(0.3, 0.3, 0.3);
-				float moonPerlinValue = min(1,max(0,unity_gradientNoise(sp.xy * 30)/3));
+				float moonPerlinValue = min(1,max(0,perlin_noise(sp.xy * 30)/3));
 				float moonPatternAlpha = min(1, max(0, 1 - max(35, moonCenterDist) / moonRadius * 3)) * easeOutSine(altitudeRatio);
 				moonOriginalColor = moonOriginalColor * (1 - moonPatternAlpha) + (1 - moonPerlinValue) * moonPatternAlpha;
 				float3 moonColor = moonOriginalColor * moonValue;
 
 				// Clouds
 				float2 cloudRelativePos = float2(sp.x + _Time.x * CLOUDS_WIND_SPEED + _PlayerX * CLOUDS_PARALLAX_MULT, sp.y + _Altitude * CLOUDS_PARALLAX_MULT);
-				float cloudPerlinValue = unity_gradientNoise(cloudRelativePos * 4 * (_ScreenParams.y / 720));
+				float cloudPerlinValue = perlin_noise(cloudRelativePos * 4 * (_ScreenParams.y / 720));
 				float cloudValue = pow(cloudPerlinValue + 0.5 + altitudeRatio / 4, 3) / pow(1.5 + altitudeRatio / 4, 3) * 2;
 				cloudValue *= (1 - altitudeRatio);
 				float3 cloudColor = cloudValue * (1 - sunValue * 6) * (1 - moonValue * 3) +
@@ -120,7 +120,7 @@
 				return finalValue;
 			}
 
-			inline float4 starBrightness(float starNum) {
+			inline float4 star_brightness(float starNum) {
 				starNum = random(starNum);
 				float sinVal = sin((_Time / (starNum + 1) + starNum) * 100);
 				float scaledSinVal = sinVal * (starNum + 1) - (starNum);
@@ -144,7 +144,7 @@
 			}
 
 			// https://docs.unity3d.com/Packages/com.unity.shadergraph@6.9/manual/Gradient-Noise-Node.html
-			float2 unity_gradientNoise_dir(float2 p)
+			float2 perlin_noise_dir(float2 p)
 			{
 				p = p % 289;
 				float x = (34 * p.x + 1) * p.x % 289 + p.y;
@@ -153,14 +153,14 @@
 				return normalize(float2(x - floor(x + 0.5), abs(x) - 0.5));
 			}
 
-			float unity_gradientNoise(float2 p)
+			float perlin_noise(float2 p)
 			{
 				float2 ip = floor(p);
 				float2 fp = frac(p);
-				float d00 = dot(unity_gradientNoise_dir(ip), fp);
-				float d01 = dot(unity_gradientNoise_dir(ip + float2(0, 1)), fp - float2(0, 1));
-				float d10 = dot(unity_gradientNoise_dir(ip + float2(1, 0)), fp - float2(1, 0));
-				float d11 = dot(unity_gradientNoise_dir(ip + float2(1, 1)), fp - float2(1, 1));
+				float d00 = dot(perlin_noise_dir(ip), fp);
+				float d01 = dot(perlin_noise_dir(ip + float2(0, 1)), fp - float2(0, 1));
+				float d10 = dot(perlin_noise_dir(ip + float2(1, 0)), fp - float2(1, 0));
+				float d11 = dot(perlin_noise_dir(ip + float2(1, 1)), fp - float2(1, 1));
 				fp = fp * fp * fp * (fp * (fp * 6 - 15) + 10);
 				return lerp(lerp(d00, d01, fp.y), lerp(d10, d11, fp.y), fp.x);
 			}
