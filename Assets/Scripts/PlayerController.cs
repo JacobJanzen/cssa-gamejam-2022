@@ -78,7 +78,6 @@ public class PlayerController : MonoBehaviour
 
     void updateGravity(){
         this.characterRigidBody.gravityScale = MIN_GRAVITY + MAX_GRAVITY - ((this.transform.position.y/MAX_ALTITUDE)*MAX_GRAVITY);
-        Debug.Log(this.characterRigidBody.gravityScale);
-        //Debug.Log(this.transform.position.y);
+        //Debug.Log(this.characterRigidBody.gravityScale);
     }
 }
