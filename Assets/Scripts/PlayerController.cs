@@ -28,16 +28,15 @@ public class PlayerController : MonoBehaviour
         this.moveVertical = Input.GetAxis("Vertical"); // Y-Axis
         this.currentVelocity = this.characterRigidBody.velocity;
 
-        if (!alreadyJumped && Input.GetKeyDown(KeyCode.Space))
-        {
-            this.characterRigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
-            alreadyJumped = true;
-        }
-        else if (IsGrounded())
+        if (IsGrounded())
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
-
+        if (!alreadyJumped && Input.GetKeyDown(KeyCode.Space))
+        {
+            alreadyJumped = true;
+            this.characterRigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
+        }
     }
 
     private void FixedUpdate()
@@ -46,9 +45,13 @@ public class PlayerController : MonoBehaviour
         {
             this.characterRigidBody.velocity = new Vector2(this.moveHorizontal * this.movementSpeed, this.currentVelocity.y);
         }
+    }
 
-        if (IsGrounded() && alreadyJumped)
+    void OnCollisionEnter2D()
+    {
+        if (IsGrounded())
         {
+            
             alreadyJumped = false;
         }
     }
@@ -57,7 +60,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;
-        float distance = .65f;
+        float distance = 1f;
 
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
         if (hit.collider != null)
