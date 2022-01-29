@@ -4,35 +4,65 @@ using UnityEngine;
 
 public class MoveNPC : MonoBehaviour
 {
+    private const int FRAME_LIMIT = 148;//frames
+    private const double RADIUS = 1.5;
+    private const int MAX_SPEED = 3;
+    private SpriteRenderer sprite;
+    private int frames = 0;
+    private double startPosition;
     // Start is called before the first frame update
     void Start()
     {
-
+        sprite = GetComponent<SpriteRenderer>();
+        startPosition = getXCoord();
     }
     
     // Update is called once per frame
     void Update()
     {
-        Vector2 vector = new Vector2(0,0);
-        if(changeDirection()){
+        if(frames >= FRAME_LIMIT){
+            Vector2 vector = new Vector2(0,0);
             vector = getNextStage();
+            GetComponent<Rigidbody2D>().velocity = vector;
+            frames = 0;
         }
-        
-        GetComponent<Rigidbody2D>().velocity = vector;
+        frames++;
     }
 
     Vector2 getNextStage(){
-        if(Random.Range(0,9)>5){
-            return new Vector2(2,0);
+        int num = Random.Range(0,21);
+        if(num>16 || goRight()){
+            sprite.flipX = true;
+            return new Vector2(getSpeed(),0);
+        }else if(num<3 || goLeft()){
+            sprite.flipX = false;
+            return new Vector2(-getSpeed(),0);
+        }else{
+            return new Vector2(0,0);
         }
-        return new Vector2(-2,0);
+    }   
+
+    int getSpeed(){
+        return 2; //Random.Range(1,MAX_SPEED+1);
     }
 
-    bool changeDirection(){
-        if(Random.Range(0,9)>5){
+    bool goLeft(){
+        if(getXCoord() > startPosition + RADIUS){
+            Debug.Log("left");
             return true;
         }
         return false;
     }
-    
+
+    bool goRight(){
+        if(getXCoord() < startPosition - RADIUS){
+            Debug.Log("right");
+            return true;
+        }
+        return false;
+    }
+
+    double getXCoord(){
+        return this.transform.position.x;
+    } 
 }

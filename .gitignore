@@ -65,3 +65,4 @@ crashlytics-build.properties
 /UserSettings/
 
 
+.vscode/settings.json
