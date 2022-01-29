@@ -57,7 +57,6 @@ public class PlayerController : MonoBehaviour
     {
         if (IsGrounded())
         {
-            
             alreadyJumped = false;
         }
     }
