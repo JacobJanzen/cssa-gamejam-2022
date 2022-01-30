@@ -1,19 +1,3 @@
-# cssa-gamejam-2022
+Play this adventurous game as a space cowboy on the path to discovery of the truth.
 
-todo:
-- space
-- amogus
-- tesla car in space
-- temple run in space but theres no temple so youre just running
-- moon w/third eye
-- among us 2
-- space-time error
-- orbit
-- escape velocity
-- constellation
-- big bang
----
-- 2d
-- runner
-- shooter
-- platformer
+[Play it here](https://jacobjanzen.itch.io/space-cowboy-simulator)
