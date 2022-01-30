@@ -7,7 +7,7 @@ public class CompletionPercentage : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI m_Object;
     public Transform player;
-    private const float MAX_ALTITUDE = 250.0f;//min alt is assumed to be 0
+    private const float MAX_ALTITUDE = 359.9f;//min alt is assumed to be 0
 
     // Start is called before the first frame update
     void Start()
