@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CameraControl : MonoBehaviour
 {
-    private const float MIN_SIZE = 3f;
+    private const float MIN_SIZE = 6f;
     private const float MAX_SIZE = 50f;
     private const float MAX_ALTITUDE = 250.0f;//min alt is assumed to be 0
     public Transform player;
@@ -53,12 +53,5 @@ public class CameraControl : MonoBehaviour
     void updateCamera()
     {
         this.m_OrthographicCamera.orthographicSize = MIN_SIZE + ((player.position.y / MAX_ALTITUDE) * MAX_SIZE);
-
-
-        if (player.position.y > MAX_ALTITUDE)
-        {
-            this.m_OrthographicCamera.orthographicSize = MAX_SIZE;
-        }
-
     }
 }
