@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
         {
             this.characterRigidBody.gravityScale = MIN_GRAVITY;
         }
+        //Debug.Log(this.characterRigidBody.gravityScale);
     }
 
     void checkVoidFall(){

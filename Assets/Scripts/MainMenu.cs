@@ -7,14 +7,13 @@ public class MainMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("CombinedPlatforms");
+        SceneManager.LoadScene("GroundLevel");
         Debug.Log("Game Started");
     }
 
     public void QuitGame()
     {
         Application.Quit();
-        Application.OpenURL("about:blank");
         Debug.Log("Game Exited");
     }
 }
