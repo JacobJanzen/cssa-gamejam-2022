@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CameraControl : MonoBehaviour
 {
-    private const float MIN_SIZE = 3f;
+    private const float MIN_SIZE = 6f;
     private const float MAX_SIZE = 50f;
     private const float MAX_ALTITUDE = 250.0f;//min alt is assumed to be 0
     public Transform player;
