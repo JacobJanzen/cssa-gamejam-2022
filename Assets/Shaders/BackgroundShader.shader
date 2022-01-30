@@ -5,6 +5,7 @@
 		_Altitude("Altitude", float) = 0.0
 		_PlayerX("PlayerX", float) = 0.0
 		_MaxAltitude("MaxAltitude", float) = 1.0
+		_CameraSize("CameraSize", float) = 1.0
 	}
 
 	SubShader
@@ -17,7 +18,7 @@
 			CGPROGRAM
 
 			#define STARS_PARALLAX_MULT 5
-			#define CLOUDS_PARALLAX_MULT 0.05
+			#define CLOUDS_PARALLAX_MULT 0.25
 			#define CLOUDS_WIND_SPEED 1
 
 			#define PI 3.14159265
@@ -45,7 +46,7 @@
 
 			
 			float _Altitude, _MaxAltitude;
-			float _PlayerX;
+			float _PlayerX, _CameraSize;
 
 			static const float3 sunOriginalColor = float3(0.9882352941176471, 0.8313725490196079, 0.25098039215686274);
 
@@ -103,8 +104,8 @@
 				moonColor *= moonValue;
 
 				// Clouds
-				float2 cloudRelativePos = float2(sp.x + _Time.x * CLOUDS_WIND_SPEED + _PlayerX * CLOUDS_PARALLAX_MULT, sp.y + _Altitude * CLOUDS_PARALLAX_MULT);
-				float cloudPerlinValue = perlin_noise(cloudRelativePos * 4 * (_ScreenParams.y / 720));
+				float2 cloudRelativePos = float2(sp.x + _Time.x * CLOUDS_WIND_SPEED + (_PlayerX / _CameraSize) * CLOUDS_PARALLAX_MULT, sp.y + (_Altitude / _CameraSize) * CLOUDS_PARALLAX_MULT);
+				float cloudPerlinValue = perlin_noise(cloudRelativePos * (_ScreenParams.y / 200));
 				float cloudValue = pow(cloudPerlinValue + 0.5 + altitudeRatio / 4, 3) / pow(1.5 + altitudeRatio / 4, 3) * 2;
 				cloudValue *= (1 - altitudeRatio);
 				float3 cloudColor = cloudValue * (1 - sunValue * 6) * (1 - moonValue * 3) +
