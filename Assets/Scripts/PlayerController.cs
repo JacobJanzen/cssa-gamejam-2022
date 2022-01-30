@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Animator animator;
+    private SpriteRenderer sprite;
+
     private const float MIN_GRAVITY = 0.1f;
     private const float MAX_GRAVITY = 1.3f;
     private const float MAX_ALTITUDE = 250.0f;//min alt is assumed to be 0
@@ -22,6 +25,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         this.characterRigidBody = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -30,6 +34,8 @@ public class PlayerController : MonoBehaviour
         this.moveHorizontal = Input.GetAxis("Horizontal"); // X-Axis
         this.moveVertical = Input.GetAxis("Vertical"); // Y-Axis
         this.currentVelocity = this.characterRigidBody.velocity;
+
+        updateAnimation();
 
         if (IsGrounded())
         {
@@ -51,6 +57,23 @@ public class PlayerController : MonoBehaviour
         {
             this.characterRigidBody.velocity = new Vector2(this.moveHorizontal * this.movementSpeed, this.currentVelocity.y);
         }
+    }
+
+    void updateAnimation(){
+        animator.SetFloat("Speed", Mathf.Abs(currentVelocity.x));
+        
+        if(currentVelocity.x < -0.01){
+            sprite.flipX = true;
+        }else if(currentVelocity.x>0.01){
+            sprite.flipX = false;
+        }
+
+        if(alreadyJumped){
+            animator.SetBool("IsJumping", true);
+        }else{
+            animator.SetBool("IsJumping", false);
+        }
+
     }
 
     void OnCollisionEnter2D()
