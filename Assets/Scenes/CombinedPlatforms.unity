@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 40306300}
   - component: {fileID: 40306299}
   - component: {fileID: 40306298}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rock (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1939,7 +1939,7 @@ GameObject:
   m_Component:
   - component: {fileID: 158153994}
   - component: {fileID: 158153993}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5659,7 +5659,7 @@ GameObject:
   - component: {fileID: 384701143}
   - component: {fileID: 384701142}
   - component: {fileID: 384701141}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bruh cloud (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6691,7 +6691,7 @@ GameObject:
   - component: {fileID: 510682565}
   - component: {fileID: 510682564}
   - component: {fileID: 510682563}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: single cloud (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7076,7 +7076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 576812052}
   - component: {fileID: 576812051}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rock (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7674,7 +7674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 622485428}
   - component: {fileID: 622485427}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rock (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12226,7 +12226,7 @@ GameObject:
   - component: {fileID: 1066908493}
   - component: {fileID: 1066908492}
   - component: {fileID: 1066908491}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rock (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12353,7 +12353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1069865329}
   - component: {fileID: 1069865328}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rock (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13082,7 +13082,7 @@ GameObject:
   - component: {fileID: 1104685473}
   - component: {fileID: 1104685472}
   - component: {fileID: 1104685471}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: single cloud (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15740,7 +15740,7 @@ GameObject:
   - component: {fileID: 1291442347}
   - component: {fileID: 1291442346}
   - component: {fileID: 1291442345}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: single cloud (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16643,7 +16643,7 @@ GameObject:
   - component: {fileID: 1370477413}
   - component: {fileID: 1370477412}
   - component: {fileID: 1370477411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: single cloud (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17241,7 +17241,7 @@ GameObject:
   - component: {fileID: 1420636555}
   - component: {fileID: 1420636554}
   - component: {fileID: 1420636553}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bruh cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22592,7 +22592,7 @@ GameObject:
   - component: {fileID: 1776024376}
   - component: {fileID: 1776024375}
   - component: {fileID: 1776024374}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: single cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25834,7 +25834,7 @@ GameObject:
   - component: {fileID: 1948881927}
   - component: {fileID: 1948881926}
   - component: {fileID: 1948881925}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rock (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26995,7 +26995,7 @@ GameObject:
   - component: {fileID: 2006556739}
   - component: {fileID: 2006556738}
   - component: {fileID: 2006556737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rock (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28883,7 +28883,7 @@ GameObject:
   - component: {fileID: 2146906951}
   - component: {fileID: 2146906950}
   - component: {fileID: 2146906949}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bruh cloud (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29010,7 +29010,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2147276199}
   - component: {fileID: 2147276198}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rock (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
