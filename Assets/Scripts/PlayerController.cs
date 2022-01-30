@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private AudioSource footstep;
     public Animator animator;
     private SpriteRenderer sprite;
 
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         this.characterRigidBody = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        footstep = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -118,6 +120,10 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
+    void footstepSound(){
+        footstep.Play();
+    }
+
     void updateGravity(){
         this.characterRigidBody.gravityScale = MIN_GRAVITY + MAX_GRAVITY - ((this.transform.position.y/MAX_ALTITUDE)*MAX_GRAVITY);
 
@@ -125,7 +131,6 @@ public class PlayerController : MonoBehaviour
         {
             this.characterRigidBody.gravityScale = MIN_GRAVITY;
         }
-        //Debug.Log(this.characterRigidBody.gravityScale);
     }
 
     void checkVoidFall(){
