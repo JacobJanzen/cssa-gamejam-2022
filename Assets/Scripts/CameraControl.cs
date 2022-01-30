@@ -39,7 +39,7 @@ public class CameraControl : MonoBehaviour
     {
         if (player.position.y >= sceneHeight)
         {
-            SceneManager.LoadScene("EndingCutscene");
+            SceneManager.LoadScene("EndCutscene");
             return;
         }
         transform.position = new Vector3(player.position.x + offset.x, player.position.y + offset.y + 1, offset.z); // Camera follows the player with specified offset position
