@@ -45,6 +45,10 @@ public class PlayerController : MonoBehaviour
         {
             alreadyJumped = true;
             this.characterRigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
+            if (PlatformAbove())
+            {
+                alreadyJumped = false;
+            }
         }
 
         updateGravity();
@@ -82,6 +86,21 @@ public class PlayerController : MonoBehaviour
         {
             alreadyJumped = false;
         }
+    }
+
+    bool PlatformAbove()
+    {
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.up;
+        float distance = 1f;
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     bool IsGrounded()
