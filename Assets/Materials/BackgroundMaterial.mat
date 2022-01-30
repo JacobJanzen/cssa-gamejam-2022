@@ -60,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Altitude: 39.988186
+    - _Altitude: 2.2187667
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -75,7 +75,7 @@ Material:
     - _Parallax: 0.02
     - _PixelHeight: 13.6
     - _PixelWidth: 10.9
-    - _PlayerX: -2.89695
+    - _PlayerX: 16.99944
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
