@@ -99,8 +99,8 @@
 				float3 moonOriginalColor = float3(0.3, 0.3, 0.3);
 				float moonPerlinValue = min(1,max(0,perlin_noise(sp.xy * 30)/3));
 				float moonPatternAlpha = min(1, max(0, 1 - max(35, moonCenterDist) / moonRadius * 3)) * easeOutSine(altitudeRatio);
-				moonOriginalColor = moonOriginalColor * (1 - moonPatternAlpha) + (1 - moonPerlinValue) * moonPatternAlpha;
-				float3 moonColor = moonOriginalColor * moonValue;
+				float3 moonColor = moonOriginalColor * (1 - moonPatternAlpha) + (1 - moonPerlinValue) * moonPatternAlpha;
+				moonColor *= moonValue;
 
 				// Clouds
 				float2 cloudRelativePos = float2(sp.x + _Time.x * CLOUDS_WIND_SPEED + _PlayerX * CLOUDS_PARALLAX_MULT, sp.y + _Altitude * CLOUDS_PARALLAX_MULT);
