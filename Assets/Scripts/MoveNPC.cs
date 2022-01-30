@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MoveNPC : MonoBehaviour
 {
-    private const int FRAME_LIMIT = 400;//frames
-    private const double RADIUS = 0.5;
-    private const float MAX_SPEED = 2.2f;
+    private const int FRAME_LIMIT = 120;//frames
+    private const double RADIUS = 0.1;
+    private const float MAX_SPEED = 0.7f;
     private SpriteRenderer sprite;
     private int frames = 0;
     private double startPosition;
