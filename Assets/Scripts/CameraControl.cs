@@ -43,11 +43,12 @@ public class CameraControl : MonoBehaviour
             return;
         }
         transform.position = new Vector3(player.position.x + offset.x, player.position.y + offset.y + 1, offset.z); // Camera follows the player with specified offset position
+        updateCamera();
 
         bgMaterial.SetFloat("_Altitude", player.position.y + baseAltitude);
         bgMaterial.SetFloat("_PlayerX", player.position.x);
         bgMaterial.SetFloat("_MaxAltitude", sceneHeight + baseAltitude);
-        updateCamera();
+        bgMaterial.SetFloat("_CameraSize", this.m_OrthographicCamera.orthographicSize);
     }
 
     void updateCamera()
