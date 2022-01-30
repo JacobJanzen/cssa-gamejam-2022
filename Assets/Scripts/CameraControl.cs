@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class CameraControl : MonoBehaviour
 {
@@ -37,6 +37,11 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (player.position.y >= sceneHeight)
+        {
+            SceneManager.LoadScene("EndingCutscene");
+            return;
+        }
         transform.position = new Vector3(player.position.x + offset.x, player.position.y + offset.y + 1, offset.z); // Camera follows the player with specified offset position
 
         bgMaterial.SetFloat("_Altitude", player.position.y + baseAltitude);
