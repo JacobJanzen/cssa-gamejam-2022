@@ -53,12 +53,5 @@ public class CameraControl : MonoBehaviour
     void updateCamera()
     {
         this.m_OrthographicCamera.orthographicSize = MIN_SIZE + ((player.position.y / MAX_ALTITUDE) * MAX_SIZE);
-
-
-        if (player.position.y > MAX_ALTITUDE)
-        {
-            this.m_OrthographicCamera.orthographicSize = MAX_SIZE;
-        }
-
     }
 }
