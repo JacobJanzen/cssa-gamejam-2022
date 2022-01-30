@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("GroundLevel");
+        SceneManager.LoadScene("CombinedPlatforms");
         Debug.Log("Game Started");
     }
 
