@@ -19,7 +19,7 @@
 
 			#define STARS_PARALLAX_MULT 5
 			#define CLOUDS_PARALLAX_MULT 0.25
-			#define CLOUDS_WIND_SPEED 1
+			#define CLOUDS_WIND_SPEED 4
 
 			#define PI 3.14159265
 			#define PHI 1.61803398874989484820459  // Φ = Golden Ratio
@@ -104,8 +104,8 @@
 				moonColor *= moonValue;
 
 				// Clouds
-				float2 cloudRelativePos = float2(sp.x + _Time.x * CLOUDS_WIND_SPEED + (_PlayerX / _CameraSize) * CLOUDS_PARALLAX_MULT, sp.y + (_Altitude / _CameraSize) * CLOUDS_PARALLAX_MULT);
-				float cloudPerlinValue = perlin_noise(cloudRelativePos * (_ScreenParams.y / 200));
+				float2 cloudRelativePos = float2(sp.x * log(_CameraSize) + _Time.x * CLOUDS_WIND_SPEED + (_PlayerX / _CameraSize) * CLOUDS_PARALLAX_MULT, sp.y * log(_CameraSize) + (_Altitude / _CameraSize) * CLOUDS_PARALLAX_MULT);
+				float cloudPerlinValue = perlin_noise(cloudRelativePos);
 				float cloudValue = pow(cloudPerlinValue + 0.5 + altitudeRatio / 4, 3) / pow(1.5 + altitudeRatio / 4, 3) * 2;
 				cloudValue *= (1 - altitudeRatio);
 				float3 cloudColor = cloudValue * (1 - sunValue * 6) * (1 - moonValue * 3) +

@@ -6,6 +6,7 @@ public class GhostPlayer : MonoBehaviour
 {
     public bool isRecord;
     public bool isReplay;
+    public int recordedFPS = 144;
 
     public List<Vector3> recPosition;
     public List<Quaternion> recRotation;
@@ -23,7 +24,7 @@ public class GhostPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int frameCount = Time.frameCount;
+        int frameCount = (int) (Time.time * recordedFPS);
         if (isRecord && frameCount % recordOnceEvery == 0)
         {
             recPosition.Add(this.transform.position);
