@@ -52,17 +52,13 @@ public class PlayerController : MonoBehaviour
                 alreadyJumped = false;
             }
         }
-
-        updateGravity();
-        checkVoidFall();
-    }
-
-    private void FixedUpdate()
-    {
         if (this.moveHorizontal != 0)
         {
             this.characterRigidBody.velocity = new Vector2(this.moveHorizontal * this.movementSpeed, this.currentVelocity.y);
         }
+
+        updateGravity();
+        checkVoidFall();
     }
 
     void updateAnimation(){

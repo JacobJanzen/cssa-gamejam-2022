@@ -13,7 +13,6 @@ public class GhostPlayer : MonoBehaviour
     public List<Sprite> recSprite;
 
     private int recordOnceEvery = 1;
-    private int updateCounter = 0;
     private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
@@ -24,8 +23,8 @@ public class GhostPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        updateCounter++;
-        if (isRecord && updateCounter % recordOnceEvery == 0)
+        int frameCount = Time.frameCount;
+        if (isRecord && frameCount % recordOnceEvery == 0)
         {
             recPosition.Add(this.transform.position);
             recRotation.Add(this.transform.rotation);
@@ -34,7 +33,7 @@ public class GhostPlayer : MonoBehaviour
         }
         else if (isReplay)
         {
-            int ind = updateCounter % recPosition.Count;
+            int ind = frameCount % recPosition.Count;
             this.transform.position = recPosition[ind];
             this.transform.rotation = recRotation[ind];
             spriteRenderer.flipX = recFlipX[ind];
