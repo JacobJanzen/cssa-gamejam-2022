@@ -24368,20 +24368,52 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1365628985}
     - target: {fileID: 1674241861, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674241861, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674241861, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674241861, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674241861, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -430
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 1674241861, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 123
+      value: -102
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711780915, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711780915, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711780915, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711780915, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1711780915, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5
+      value: 395
       objectReference: {fileID: 0}
     - target: {fileID: 1711780915, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -148.46
+      value: 76.53999
       objectReference: {fileID: 0}
     - target: {fileID: 1711780918, guid: d623ecaec71f6f94bac6543818fdc129, type: 3}
       propertyPath: player
@@ -24593,6 +24625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRecord: 0
   isReplay: 1
+  recordedFPS: 144
   recPosition:
   - {x: -6.1932297, y: 73.42724, z: 0}
   - {x: -6.1932297, y: 73.42724, z: 0}
@@ -30753,6 +30786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRecord: 0
   isReplay: 0
+  recordedFPS: 144
   recPosition: []
   recRotation: []
   recFlipX: 
