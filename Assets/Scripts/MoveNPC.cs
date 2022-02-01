@@ -48,7 +48,6 @@ public class MoveNPC : MonoBehaviour
 
     bool goLeft(){
         if(getXCoord() > startPosition + RADIUS){
-            Debug.Log("left");
             return true;
         }
         return false;
@@ -56,7 +55,6 @@ public class MoveNPC : MonoBehaviour
 
     bool goRight(){
         if(getXCoord() < startPosition - RADIUS){
-            Debug.Log("right");
             return true;
         }
         return false;

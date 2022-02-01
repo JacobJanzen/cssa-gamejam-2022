@@ -42,7 +42,7 @@ public class GhostPlayer : MonoBehaviour
         }
     }
 
-    public void clear()
+    public void Clear()
     {
         recPosition.Clear();
         recRotation.Clear();

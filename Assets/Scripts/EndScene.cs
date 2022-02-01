@@ -17,12 +17,12 @@ public class EndScene : MonoBehaviour
         
     }
 
-    public void openDinoLink()
+    public void OpenDinoLink()
     {
         Application.OpenURL("https://www.dinosaurearthsociety.com/faq.php");
     }
 
-    public void openMainMenu()
+    public void OpenMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
         Debug.Log("Game Started");

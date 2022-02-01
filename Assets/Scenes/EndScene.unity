@@ -813,7 +813,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1573865480}
         m_TargetAssemblyTypeName: EndScene, Assembly-CSharp
-        m_MethodName: openMainMenu
+        m_MethodName: OpenMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -986,8 +986,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1573865480}
-        m_TargetAssemblyTypeName: Link, Assembly-CSharp
-        m_MethodName: openDinoLink
+        m_TargetAssemblyTypeName: EndScene, Assembly-CSharp
+        m_MethodName: OpenDinoLink
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -21,17 +21,17 @@ public class EndCutScene : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Return))
         {
-            loadEndScene();
+            LoadEndScene();
         }
     }
 
     IEnumerator LoadEndSceneAfter(float time)
     {
         yield return new WaitForSeconds(time);
-        loadEndScene();
+        LoadEndScene();
     }
 
-    void loadEndScene()
+    void LoadEndScene()
     {
         SceneManager.LoadScene("EndScene");
     }
